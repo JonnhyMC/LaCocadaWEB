@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>La Cocada WEB - Artículos y Recuerdos</title>
+  <meta name="description" content="Venta de recuerdos, tazas, cajas, llaveros y artículos especiales de La Cocada WEB." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Estilos globales unificados -->
+  <link rel="stylesheet" href="cocada.css">
+
+</head>
+<body class="bg-[var(--c-bg)] min-h-screen">
+
+  <!-- Barra superior -->
+  <header class="sticky top-0 z-30 barra-principal">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3 flex-wrap">
+
+      <!-- LOGO -->
+      <a href="index.php" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-full bg-[#f7d3a6] border-2 border-[#7a231b] grid place-content-center">
+          <span class="text-xs tracking-[0.25em] text-[#7a231b] font-semibold">LA</span>
+        </div>
+
+        <div class="flex flex-col leading-tight">
+          <span class="text-xl sm:text-2xl font-extrabold text-[#ffecdd] tracking-[0.18em] uppercase">
+            Cocada
+          </span>
+          <span class="text-[0.7rem] sm:text-xs text-[#ffe3c7] tracking-[0.22em] uppercase">
+            Dulces de leche
+          </span>
+        </div>
+      </a>
+
+      <!-- MENÚ PRINCIPAL -->
+      <nav class="flex items-center gap-2 flex-wrap ml-2 text-xs sm:text-sm">
+        <a href="index.php" class="boton boton-outline">Inicio</a>
+        <a href="mayoreo.php" class="boton boton-outline">Mayoreo</a>
+        <a href="promociones.html" class="boton boton-primario">Artículos</a>
+        <a href="tienda.php" class="boton boton-outline">Administrador</a>
+      </nav>
+
+      <!-- CARRITO -->
+      <div class="ml-auto flex items-center gap-2">
+        <button id="cartButton" class="boton boton-primario relative text-xs sm:text-sm" aria-label="Abrir carrito">
+          <span aria-hidden="true" class="text-xl">🛒</span>
+          <span>Carrito</span>
+          <span id="cartCount"
+                class="absolute -top-2 -right-2 bg-white text-[#7a231b] font-bold text-xs px-2 py-0.5 rounded-full shadow">
+            0
+          </span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 space-y-7">
+
+    <!-- Hero: recuerdos de Parral -->
+    <section class="card overflow-hidden grid grid-cols-1 md:grid-cols-2">
+      <div class="p-6 space-y-3 flex flex-col justify-center">
+        <span class="badge">Recuerdos de Parral</span>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-[var(--c-cafe)] tracking-[0.04em]">
+          Venta de tazas, cajas y llaveros con la imagen de nuestro Parralito
+        </h1>
+        <p class="text-sm sm:text-base text-[#704127] leading-relaxed">
+          Además de los dulces artesanales, la cocada ofrece recuerdos con fotografías y diseños
+          inspirados en Hidalgo del Parral: tazas, cajas para regalo y llaveros que el cliente puede
+          llevarse como memoria de la ciudad.
+        </p>
+        <p class="text-sm sm:text-base text-[#704127] leading-relaxed">
+          Los artículos pueden venderse solos o en conjunto con dulces surtidos, formando paquetes
+          especiales para regalo.
+        </p>
+        <div class="flex flex-wrap gap-2 pt-1">
+          <span class="tag">Tazas</span>
+          <span class="tag">Cajas decorativas</span>
+          <span class="tag">Llaveros</span>
+        </div>
+      </div>
+
+      <div class="relative h-48 md:h-auto bg-[radial-gradient(circle_at_top,#ffe0bf,#f2af7a,#7a231b)]">
+        <div class="absolute inset-2 rounded-2xl overflow-hidden bg-[#3b1c14]">
+          <div class="w-full h-full grid grid-cols-2 gap-1">
+            <div class="bg-[url('img/taza1.jpeg')] bg-cover bg-center"></div>
+            <div class="bg-[url('img/recuerdo_min.jpeg')] bg-cover bg-center"></div>
+            <div class="bg-[url('img/recuerdo_puert.jpeg')] bg-cover bg-center"></div>
+            <div class="bg-[url('img/recuerdo_villa.jpeg')] bg-cover bg-center"></div>
+          </div>
+        </div>
+        <div class="absolute bottom-2 right-2 bg-[#3b1c14]/80 text-[#ffe7cf] text-[0.7rem] px-3 py-1 rounded-full">
+          Imágenes ilustrativas de recuerdos
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo de recuerdos sueltos -->
+    <section id="recuerdos" class="space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+        <div>
+          <span class="badge">Catálogo de recuerdos</span>
+          <h2 class="mt-2 text-xl sm:text-2xl font-extrabold text-[var(--c-cafe)] tracking-[0.04em]">
+            Tazas, cajas y llaveros
+          </h2>
+          <p class="text-sm text-[#704127] mt-1 max-w-2xl">
+            Esta sección muestra ejemplos de recuerdos que la tienda puede ofrecer: cada artículo se registra
+            como producto en el sistema, con su nombre, imagen y precio unitario.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-3">
+
+        <!-- Taza Mina La Prieta -->
+        <article class="card overflow-hidden flex flex-col">
+          <div class="h-36 w-full bg-[#f3d1aa] overflow-hidden">
+            <div class="w-full h-full bg-[url('img/taza1.jpeg')] bg-cover bg-center"></div>
+          </div>
+          <div class="p-4 space-y-2 flex-1 flex flex-col">
+            <span class="badge">Taza</span>
+            <h3 class="text-base font-semibold text-[var(--c-cafe)]">
+              Taza Mina La Prieta
+            </h3>
+            <p class="text-sm text-[#704127] flex-1">
+              Taza para café con fotografía de la Mina La Prieta y detalles de Parral, ideal como recuerdo diario.
+            </p>
+            <p class="text-sm font-semibold text-[#7a231b]">
+              Precio unitario configurable en el sistema.
+            </p>
+          </div>
+        </article>
+
+        <!-- Taza Centro Histórico -->
+        <article class="card overflow-hidden flex flex-col">
+          <div class="h-36 w-full bg-[#f3d1aa] overflow-hidden">
+            <div class="w-full h-full bg-[url('img/taza2.jpeg')] bg-cover bg-center"></div>
+          </div>
+          <div class="p-4 space-y-2 flex-1 flex flex-col">
+            <span class="badge">Taza</span>
+            <h3 class="text-base font-semibold text-[var(--c-cafe)]">
+              Taza Centro de Parral
+            </h3>
+            <p class="text-sm text-[#704127] flex-1">
+              Taza con imagen del centro de Parral y tono cálido, pensada para quienes quieren un recuerdo de la ciudad.
+            </p>
+            <p class="text-sm font-semibold text-[#7a231b]">
+              Se puede manejar por pieza o en paquetes.
+            </p>
+          </div>
+        </article>
+
+        <!-- Caja recuerdo Parral -->
+        <article class="card overflow-hidden flex flex-col">
+          <div class="h-36 w-full bg-[#f3d1aa] overflow-hidden">
+            <div class="w-full h-full bg-[url('img/recuerdo_min.jpeg')] bg-cover bg-center"></div>
+          </div>
+          <div class="p-4 space-y-2 flex-1 flex flex-col">
+            <span class="badge">Caja decorativa</span>
+            <h3 class="text-base font-semibold text-[var(--c-cafe)]">
+              Caja recuerdo Parral
+            </h3>
+            <p class="text-sm text-[#704127] flex-1">
+              Caja ilustrada para guardar dulces o pequeños recuerdos, con diseño alusivo a Hidalgo del Parral.
+            </p>
+            <p class="text-sm font-semibold text-[#7a231b]">
+              Puede venderse sola o con dulces surtidos.
+            </p>
+          </div>
+        </article>
+
+        <!-- Caja panorámica -->
+        <article class="card overflow-hidden flex flex-col">
+          <div class="h-36 w-full bg-[#f3d1aa] overflow-hidden">
+            <div class="w-full h-full bg-[url('img/recuerdo_puert.jpeg')] bg-cover bg-center"></div>
+          </div>
+          <div class="p-4 space-y-2 flex-1 flex flex-col">
+            <span class="badge">Caja decorativa</span>
+            <h3 class="text-base font-semibold text-[var(--c-cafe)]">
+              Caja panorámica de la ciudad
+            </h3>
+            <p class="text-sm text-[#704127] flex-1">
+              Caja con vista panorámica de Parral, pensada como regalo para visitantes o familias que viven fuera.
+            </p>
+            <p class="text-sm font-semibold text-[#7a231b]">
+              El precio se define como producto independiente.
+            </p>
+          </div>
+        </article>
+
+        <!-- Llavero recuerdo -->
+        <article class="card overflow-hidden flex flex-col">
+          <div class="h-36 w-full bg-[#f3d1aa] overflow-hidden">
+            <div class="w-full h-full bg-[url('img/recuerdo_villa.jpeg')] bg-cover bg-center"></div>
+          </div>
+          <div class="p-4 space-y-2 flex-1 flex flex-col">
+            <span class="badge">Llavero</span>
+            <h3 class="text-base font-semibold text-[var(--c-cafe)]">
+              Llavero histórico de Parral
+            </h3>
+            <p class="text-sm text-[#704127] flex-1">
+              Llavero con imagen representativa de la ciudad, pensado como recuerdo económico y fácil de llevar.
+            </p>
+            <p class="text-sm font-semibold text-[#7a231b]">
+              Se puede manejar en lote o por pieza.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="mt-10 barra-footer">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 text-xs sm:text-sm text-[#ffe7cf] flex flex-col md:flex-row items-center justify-between gap-4">
+
+      <div class="text-center md:text-left leading-tight">
+        <span>La Cocada WEB · Dulces artesanales de Parral</span><br>
+        <span>Hecho con cariño para nuestros clientes</span>
+      </div>
+
+      <div class="text-center md:text-right leading-tight">
+        <span class="block">Ubicación del local:</span>
+        <span class="block">
+          Ignacio Zaragoza & Galeana, Centro, 33800<br>
+          Hidalgo del Parral, Chih.
+        </span>
+        <span class="block mt-1">Teléfono: +52 627 143 5223</span>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
